@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+{$name} this year age is {$age} 
+<br>
+双重循环：
+{foreach key=key item=item from=$arr}
+	{foreach key=k item=v from=$item}
+		{$k}=>{$v}
+	{/foreach}
+{/foreach}
+<br>
+{section name="key" loop=$arr }
+		name=>{$arr[key].name}
+		age=>{$arr[key].age}
+{/section}
+<br>
+配置文件：
+{config_load file="html.conf"}
+{#txt#}
+{#page#}
+</body>
+</html>
